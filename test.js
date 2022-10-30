@@ -1,12 +1,12 @@
 'use strict';
 let one = 1;
-let two = "2";
-let three = "e";
+let two = 2;
+let three = 3;
 let result = one + two;
 console.log(result);
 output("ln7", result);
 // we can manually change the type of some strings. parseInt(string) will change a number that is a string into an actual number. Use it on our two variable
-result = one + parseInt(two);
+result = one + two;
 output("ln10", result);
 
 // We didn't get any output from line 9 above. What change would you need to make to get it to work? Make the change. Hint...in the bottom left corner of the window there is a button 'Console'. Click it.
@@ -17,7 +17,7 @@ output("ln16", result);
 // was the result what you expected?
 
 // what about this? Explain what is happening. What does NaN mean?
-result = three * one;
+result = one * three;
 output("ln21", result);
 
 // let's try changing the value of two
