@@ -1,45 +1,44 @@
-'use strict';
-let one = 1;
-let two = 2;
-let three = 3;
-let result = one + two;
-console.log(result);
-output("ln7", result);
-// we can manually change the type of some strings. parseInt(string) will change a number that is a string into an actual number. Use it on our two variable
-result = one + two;
-output("ln10", result);
+let firstName = "Joseph"
+let names = ["Frank", "Kyle", "Peter", "Susan", "Joseph", "Jason", "Dale", "David", "Michael", "Jay"]
 
-// We didn't get any output from line 9 above. What change would you need to make to get it to work? Make the change. Hint...in the bottom left corner of the window there is a button 'Console'. Click it.
+console.log("My name is ${ firstName }.");
+// My name is ${ firstName }.
 
-// what about multiplication?
-result = one * two;
-output("ln16", result);
-// was the result what you expected?
+console.log('My name is ${ firstName }.');
+// My name is ${ firstName }.
 
-// what about this? Explain what is happening. What does NaN mean?
-result = one * three;
-output("ln21", result);
+console.log(`My name is ${ firstName }.`);
 
-// let's try changing the value of two
-two = 4;
+console.log(`My name is ${ names[1] }.`);
 
-result = one + two;
-output("ln27", result);
-// did we get the value we expected? Why didn't it work?
-// try adding 'use strict'; to the first line of our code then look at the console again. Fix the error.
+console.log(
+  `Am I confusing you by omitting interpolation?`
+);
+// Am I confusing you by omitting interpolation?
 
-const myArray = [1, 2, 3, 5];
-//add the number 4 to the end of the array
-myArray.push(4)
-
-console.log(myArray);
-// it would be nice if our numbers were in the correct order. We will learn how to sort later, for now let's remove the last two items in the array and then add them back in the correct numerical order.
-myArray.pop()
-myArray.pop()
-console.log(myArray);
-
-// The code below is used to aid in displaying the results.
-function output(line, content) {
-  const outputElement = document.querySelector(".output");
-  outputElement.innerHTML += `<p>${line} : ${content}</p>`;
+while (false) {
+  console.log(3.141592);
 }
+
+let value = 1
+
+//while (value != undefined) {
+  console.log("Still got something!");
+//}
+
+let hitchhikersGuide = 42
+hitchhikersGuide[ Symbol("meaning of life") ];
+// 42
+console.log(hitchhikersGuide)
+
+names.length;
+// 4
+console.log(names.length)
+
+names[0];
+// Frank
+console.log(names[0])
+
+names[1];
+// Kyle
+console.log(names[1])
