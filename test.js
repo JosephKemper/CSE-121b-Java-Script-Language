@@ -265,3 +265,13 @@ console.log(execResult.input); // 'cdbBdbsbz'
 console.log(execResult.index); // 1
 console.log(execResult); // [ "dbBd", "bB", "d" ]
 
+
+
+// modify the copyInput callback to receive the event object
+function copyInput(event) {
+  // take a look at the event!
+  console.log(event);
+  const inputElement = document.getElementById("inputBox");
+  const outputElement = document.getElementById("output");
+  outputElement.innerHTML = inputElement.value;
+}
