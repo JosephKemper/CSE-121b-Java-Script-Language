@@ -1,3 +1,2 @@
-function myFunction1() {
-  document.getElementById("demo1").innerHTML = "Hello RaghuRamKondeti, This is Pavan Kumar Sake";
-  }
+var s = document.getElementById("element1").innerHTML = "PROFITLOOPS";
+document.write(s);
