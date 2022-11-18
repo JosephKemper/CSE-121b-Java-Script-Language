@@ -29,3 +29,16 @@ console.log(overallGPA);
 const gpa = overallGPA/gpaScores.length;
 console.log(gpa)
 
+const fruitArray = ['watermelon', 'peach', 'apple', 'tomato', 'grape'];
+console.log(fruitArray);
+const longFruit = fruitArray.filter(fruit => fruit.length > 6);
+console.log(longFruit);
+
+const numberArray = [12, 34, 21, 54];
+console.log(numberArray)
+
+const luckNumber = 21;
+
+let luckyIndex = numberArray.indexOf(luckNumber)
+console.log(luckyIndex);
+
