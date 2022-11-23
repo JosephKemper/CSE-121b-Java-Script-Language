@@ -1,0 +1,31 @@
+#gameboard {
+    display: grid;
+    grid-template-columns: 150px 150px 150px;
+    grid-template-rows: 150px 150px 150px;
+    margin: auto;
+    width: 450px;
+    padding: 10px;
+}
+
+h2, body {
+    text-align: center;
+}
+.game-cell {
+    display: inline-block;
+    font-size: 24pt;
+    height: 30%;
+    width: 30%;
+    line-height: 125pt;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.row-1 {
+    border-top: 3px solid rgb(2, 1, 1);
+    border-bottom: 3px solid black;
+}
+
+.col-1 {
+    border-left: 3pt solid black;
+    border-right: 3pt solid black;
+}
