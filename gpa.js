@@ -54,4 +54,4 @@ function clickHandler() {
     outputGpa(gpa, "#output");
 }
 
-document.querySelector("#submitButton")?.addEventListener("click", clickHandler)
+document.querySelector("#submitButton").addEventListener("click", clickHandler)
