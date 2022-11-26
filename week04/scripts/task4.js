@@ -3,30 +3,49 @@
 /* DATA */
 
 // Step 1: Declare a new variable to hold information about yourself
-
-// Step 2: Inside of the object, add a property named name with a value of your name as a string
-
-// Step 3: Add another property named photo with a value of the image path and name (used in Task 2) as a string
-
-// Step 4: Add another property named favoriteFoods with a value of an array of your favorite foods as strings ( hint: [] )
-
-// Step 5: Add another property named hobbies with a value of an array of your hobbies as strings
-
-// Step 6: Add another property named placesLived with a value of an empty array
-
-// Step 7: Inside of the empty array above, add a new object with two properties: place and length and values of an empty string
-
-// Step 8: For each property, add appropriate values as strings
-
-// Step 9: Add additional objects with the same properties for each place you've lived
+const personalInfo = {
+    // Step 2: Inside of the object, add a property named name with a value of your name as a string
+    name: "Joseph Kemper",
+    // Step 3: Add another property named photo with a value of the image path and name (used in Task 2) as a string
+    picture: "images/Profile.png",
+    // Step 4: Add another property named favoriteFoods with a value of an array of your favorite foods as strings ( hint: [] )
+    favoriteFoods: ["Broccoli Salad", " Lasagna", " Buttered Toast"],
+    // Step 5: Add another property named hobbies with a value of an array of your hobbies as strings
+    hobbies: [
+        "Journaling", 
+        " Writing Love Poems", 
+        " Elder Scrolls Online", 
+        " Reading",
+        " Walking"],
+    // Step 6: Add another property named placesLived with a value of an empty array
+    placesLived : [
+        // Step 7: Inside of the empty array above, add a new object with two properties: place and length and values of an empty string
+        // Step 8: For each property, add appropriate values as strings
+        { place: "Moses Lake, WA", length: "15 Years"},
+        // Step 9: Add additional objects with the same properties for each place you've lived
+        { place: "Othello, WA", length: "1 Years"},
+        { place: "Basin City, WA", length: "1 Years"},
+        { place: "Ephrata, WA", length: "3 Years"},
+        { place: "Ellensburg, WA", length: "2 Years"},
+        { place: "Federal Way, WA", length: "4 Years"},
+        { place: "Ft Campbell, KY", length: "1 Years"},
+        { place: "Erlangen, Germany", length: "1 Years"},
+        { place: "California, San Bernardino", length: "2 Years"},
+        { place: "Provo, UT", length: "16 Years"}
+    ]
+}
 
 
 /* OUTPUT */
 
 // Step 1: Assign the value of the name property (of the object declared above) to the HTML <span> element with an ID of name
+const assignName = document.querySelector("#name") 
+assignName.textContent = personalInfo.name
+
 
 // Step 2: Assign the value of the photo property as the src attribute of the HTML <img> element with an ID of photo
-
+let picture = "images/Profile.png";
+document.querySelector("img").setAttribute("src", picture);
 // Step 3: Assign the value of the name property as the alt attribute of the HTML <img> element with an ID of photo
 
 // Step 4: For each favorite food in the favoriteFoods property, create an HTML <li> element and place its value in the <li> element

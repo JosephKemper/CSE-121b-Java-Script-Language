@@ -22,7 +22,7 @@ let picture = "images/Profile.png";
 
 // Step 7: place the value of the picture variable into the HTML file (hint: document.querySelector().setAttribute())
 document.querySelector("img").setAttribute("src", picture);
-// TODO: #10 Picture Not working
+
 
 
 /* ARRAYS */
