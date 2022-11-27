@@ -49,7 +49,7 @@ let altName = assignName.textContent
 let htmlPicture = document.querySelector("img")
 //htmlPicture.setAttribute(picture, assignName.textContent)
 document.querySelector("img").setAttribute("src", picture);
-// TODO #28 Step 3: Assign the value of the name property as the alt attribute of the HTML <img> element with an ID of photo
+// Step 3: Assign the value of the name property as the alt attribute of the HTML <img> element with an ID of photo
 document.querySelector("img").setAttribute("alt", altName)
 // Step 4: For each favorite food in the favoriteFoods property, create an HTML <li> element and place its value in the <li> element
 const foodList = personalInfo.favoriteFoods;
