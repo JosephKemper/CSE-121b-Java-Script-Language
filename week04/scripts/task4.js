@@ -30,7 +30,7 @@ const personalInfo = {
         { place: "Federal Way, WA", length: "4 Years"},
         { place: "Ft Campbell, KY", length: "1 Years"},
         { place: "Erlangen, Germany", length: "1 Years"},
-        { place: "California, San Bernardino", length: "2 Years"},
+        { place: "California, San Bernardino Mission", length: "2 Years"},
         { place: "Provo, UT", length: "16 Years"}
     ]
 }
@@ -46,18 +46,36 @@ assignName.textContent = personalInfo.name
 // Step 2: Assign the value of the photo property as the src attribute of the HTML <img> element with an ID of photo
 let picture = "images/Profile.png";
 document.querySelector("img").setAttribute("src", picture);
-// Step 3: Assign the value of the name property as the alt attribute of the HTML <img> element with an ID of photo
+// TODO #28 Step 3: Assign the value of the name property as the alt attribute of the HTML <img> element with an ID of photo
 
 // Step 4: For each favorite food in the favoriteFoods property, create an HTML <li> element and place its value in the <li> element
-
+const foodList = personalInfo.favoriteFoods;
 // Step 5: Append the <li> elements created above as children of the HTML <ul> element with an ID of favorite-foods
+for (let i = 0; i < foodList.length; i++) {
+    let htmlFood = document.createElement("li");
+    htmlFood.innerText = foodList[i];
+    document.querySelector("#favorite-foods").appendChild(htmlFood)
+}
 
 // Step 6: Repeat Step 4 for each hobby in the hobbies property
-
+const hobbyList = personalInfo.hobbies;
 // Step 7: Repeat Step 5 using the HTML <ul> element with an ID of hobbies
-
+for (let i = 0; i < hobbyList.length; i++) {
+    let htmlHobby = document.createElement("li");
+    htmlHobby.innerText = hobbyList[i];
+    document.querySelector("#hobbies").appendChild(htmlHobby)
+}
 // Step 8: For each object in the <em>placesLived</em> property:
 // - Create an HTML <dt> element and put its place property in the <dt> element
 // - Create an HTML <dd> element and put its length property in the <dd> element
+let htmlPlaces = "";
+let place = personalInfo.placesLived
 
 // Step 9: Append the HTML <dt> and <dd> elements created above to the HTML <dl> element with an ID of places-lived
+function renderPlaces (place){
+    htmlPlaces += "<dt>" + place.place + "</dt>" + "<dd>" + place.length + "</dt>";
+}
+
+place.forEach(renderPlaces)
+
+document.getElementById("places-lived").innerHTML = htmlPlaces
