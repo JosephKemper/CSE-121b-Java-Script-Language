@@ -3,30 +3,21 @@ const url = "https://pokeapi.co/api/v2/pokemon/ditto";
 const urlList = "https://pokeapi.co/api/v2/pokemon";
 let results = null;
 
-async function getPokemon ( url )
+async function getPokemon ( url, doThis )
 {
-    const response = await fetch( url );
+    const response = await fetch( url, );
     //check to see if the fetch was successful
     if ( response.ok )
     {
         // the API will send us JSON...but we have to convert the response before we can use it
         // .json() also returns a promise...so we await it as well.
         const data = await response.json();
-        doStuff( data );
+        // execute the callback
+        doThis( data );
     }
 }
 
 
-async function getPokemonList ( url )
-{
-    const response = await fetch( url );
-    if ( response.ok )
-    {
-        const data = await response.json();
-        doStuffList( data );
-
-    }
-}
 function doStuff ( data )
 {
     results = data;
@@ -48,7 +39,7 @@ function doStuffList ( data )
     } );
 }
 
-getPokemon( url );
+getPokemon( url, doStuff );
 console.log( "second: ", results );
 
-getPokemonList( urlList );
+getPokemon( urlList, doStuffList );
