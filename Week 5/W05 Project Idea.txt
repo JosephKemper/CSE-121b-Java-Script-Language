@@ -1,0 +1,1 @@
+I have written my wife a minimum of one love poem every day for almost a decade. I am going to make an app to select and display one of them for her. I will also add the option of generating a random motivational quote, and display a random pokemon to work with the API part of the project. 
