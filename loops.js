@@ -20,7 +20,7 @@ let myInfo = {
     ],
 };
 // Step 4: For each favorite food in the favoriteFoods property, create an HTML <li> element and place its value in the <li> element
-const foodsElement = document.querySelector("#favorite-foods")
+const foodsElement = document.querySelector( "#favorite-foods" );
 function useForEach ( myInfo )
 {
     let favoriteFoods = myInfo.favoriteFoods;
@@ -28,16 +28,16 @@ function useForEach ( myInfo )
     {
         let displayFood = document.createElement( "li" );
         displayFood.textContent = food;
-        foodsElement.appendChild(displayFood)
+        // Step 5: Append the <li> elements created above as children of the HTML <ul> element with an ID of favorite-foods
+        foodsElement.appendChild( displayFood );
     } );
 }
 
-useForEach( myInfo );
+//useForEach( myInfo );
 
 
+const foodListElements = myInfo.favoriteFoods.map( ( food ) => `<li>${ food }</li>` );
+// we need to flatten the array of strings into one big string. .join does this.
+foodsElement.innerHTML = foodListElements.join( "" );
 
-// Step 5: Append the <li> elements created above as children of the HTML <ul> element with an ID of favorite-foods
-document.querySelector( "#favorite-foods" ).appendChild( favoriteFood1 );
-document.querySelector( "#favorite-foods" ).appendChild( favoriteFood2 );
-document.querySelector( "#favorite-foods" ).appendChild( favoriteFood3 );
-document.querySelector( "#favorite-foods" ).appendChild( favoriteFood4 );
+
