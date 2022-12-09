@@ -1,13 +1,13 @@
-/* 1. Get the Mount Timpanogos Temple Picture from 
+/* TODO:1. #48 Get the Mount Timpanogos Temple Picture from 
 'https://byui-cse.github.io/cse121b-course/week05/temples.json'.*/
 
-// 2. Store it in a variable
+// TODO:2. #49 Store it in a variable
 
-// 3. Attach temple picture to temples div
+// TODO:3. #50 Attach temple picture to temples div
 
-// 4. Create variable to store wedding date
+// TODO: #51 4. Create variable to store wedding date
 
-// 5. Create HTML element to display wedding date
+// TODO: #52 5. Create HTML element to display wedding date
 
 // 6. Calculate current date
 const currentDate = new Date();
@@ -17,16 +17,16 @@ const currentYear = currentDate.getFullYear();
 const currentMonth = currentDate.getMonth();
 const currentDay = currentDate.getDate()
 
-/* 8. Calculate how many days, months, and years 
+/* TODO: #53 8. Calculate how many days, months, and years 
 we have been married */
 
-// 9. Create HTML element to display length of marriage
+// TODO: #54 9. Create HTML element to display length of marriage
 
-// 10. Create article to store poems
+// TODO: #55 10. Create article to store poems
 
-// 11. Pull poem date, text, and title and store in article
+// TODO: #56 11. Pull poem date, text, and title and store in article
 
-// 12. Build sorting method for poems using dropdown list
+// TODO: #57 12. Build sorting method for poems using dropdown list
 
 
 
