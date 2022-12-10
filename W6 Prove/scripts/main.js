@@ -1,9 +1,33 @@
 /* TODO:1. #48 Get the Mount Timpanogos Temple Picture from 
 'https://byui-cse.github.io/cse121b-course/week05/temples.json'.*/
 
+async function getTemples ()
+{
+    
+    let response = await fetch( "https://byui-cse.github.io/cse121b-course/week05/temples.json" );
+    console.log( response );
+    templeList = await response.json();
+    console.log( templeList );
+    return templeList;
+}
+
+let templeList = getTemples();
+console.log(templeList)
+
+async function findTimpanogos (templeList){
+    // TODO #61 build loop to pull out temple data and find Timpanogos
+}
+
 // TODO:2. #49 Store it in a variable
+//let timpanogosIndex = (templeList.indexOf("Timpanogos"))
+//console.log(timpanogosIndex)
+let timpanogosData = templeList[8]
+console.log(timpanogosData)
+
 
 // TODO:3. #50 Attach temple picture to temples div
+const templesDiv = document.getElementById( "temples" );
+console.log( templesDiv );
 
 // TODO: #51 4. Create variable to store wedding date
 
@@ -86,11 +110,10 @@ using the day of week variable declared in Step 2 above*/
 // Not sure what this is asking me to do. 
 
 
-let templeList = [];
+
 console.log( templeList );
 
-const templesDiv = document.getElementById( "temples" );
-console.log( templesDiv );
+
 function output ( temples )
 {
     console.log( temples );
@@ -125,27 +148,12 @@ function output ( temples )
     } );
 }
 
-async function getTemples ()
-{
-    /* Step 4: In the function, using the built-in fetch method,
-    call this absolute URL:
-    'https://byui-cse.github.io/cse121b-course/week05/temples.json'.
-    Create a variable to hold the response from your fetch.
-    You should have the program wait on this line until it finishes.*/
-    let response = await fetch( "https://byui-cse.github.io/cse121b-course/week05/temples.json" );
-    console.log( response );
-    /* Step 5: Convert your fetch response into a Javascript object ( hint: .json() ).
-    Store this in the templeList variable you declared earlier (Step 1).
-    Make sure the the execution of the code waits here as well until it finishes.*/
-    templeList = await response.json();
-    console.log( templeList );
-    output( templeList );
-}
+
 
 
 /* Step 6: Finally, call the output function and pass it the list of temples.
 Execute your getTemples function to make sure it works correctly.*/
-getTemples();
+
 
 /* Step 7: Declare a function named reset that clears all of the <article>
 elements from the HTML element with an ID of temples*/
