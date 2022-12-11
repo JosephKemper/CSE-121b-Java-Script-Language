@@ -1,28 +1,48 @@
 /* TODO:1. #48 Get the Mount Timpanogos Temple Picture from 
 'https://byui-cse.github.io/cse121b-course/week05/temples.json'.*/
-
+let timpanogosTemple = [];
 async function getTemples ()
 {
-    
+
     let response = await fetch( "https://byui-cse.github.io/cse121b-course/week05/temples.json" );
     console.log( response );
     templeList = await response.json();
     console.log( templeList );
-    return templeList;
+    let timpanogosTemple = iterateList( templeList );
+    return timpanogosTemple;
 }
 
-let templeList = getTemples();
-console.log(templeList)
+timpanogosTemple = getTemples();
+console.log( timpanogosTemple );
 
-async function findTimpanogos (templeList){
+async function iterateList ( templeList )
+{
     // TODO #61 build loop to pull out temple data and find Timpanogos
+
+    console.log( timpanogosTemple );
+    templeList.forEach( temple =>
+    {
+        let templeName = temple.templeName;
+        console.log( templeName );
+        let templeLocation = temple.location;
+        console.log( templeLocation );
+        let templeDedication = temple.dedication;
+        console.log( templeDedication );
+        let templeIMG = temple.imageUrl;
+        console.log( templeIMG );
+
+        if ( templeName === "Mount Timpanogos Utah Temple" )
+        {
+            timpanogosTemple.push( templeName, templeLocation, templeDedication, templeIMG );
+            console.log( timpanogosTemple );
+            return timpanogosTemple;
+        }
+    } );
 }
 
 // TODO:2. #49 Store it in a variable
 //let timpanogosIndex = (templeList.indexOf("Timpanogos"))
 //console.log(timpanogosIndex)
-let timpanogosData = templeList[8]
-console.log(timpanogosData)
 
 
 // TODO:3. #50 Attach temple picture to temples div
@@ -39,7 +59,7 @@ const currentDate = new Date();
 // 7. Separate date into month, day, and year
 const currentYear = currentDate.getFullYear();
 const currentMonth = currentDate.getMonth();
-const currentDay = currentDate.getDate()
+const currentDay = currentDate.getDate();
 
 /* TODO: #53 8. Calculate how many days, months, and years 
 we have been married */
@@ -114,53 +134,8 @@ using the day of week variable declared in Step 2 above*/
 console.log( templeList );
 
 
-function output ( temples )
-{
-    console.log( temples );
-    temples.forEach( temple =>
-    {
-        let templeArticle = document.createElement( "article" );
-        console.log( templeArticle );
-        let h3Name = document.createElement( "h3" );
-        console.log( h3Name );
-        let h4Location = document.createElement( "h4" );
-        console.log( h4Location );
-        let h4Dedicated = document.createElement( "h4" );
-        console.log( h4Dedicated );
-        let templeIMG = document.createElement( "img" );
-        console.log( templeIMG );
-        templeIMG.setAttribute( "src", temple.imageUrl );
-        console.log( templeIMG );
-        templeIMG.setAttribute( "alt", temple.templeName );
-        console.log( templeIMG );
-
-        h3Name.innerHTML = temple.templeName;
-        console.log( h3Name );
-        h4Location.innerHTML = temple.location;
-        console.log( h4Location );
-        h4Dedicated.innerHTML = temple.dedicated;
-        console.log( h4Dedicated );
-        templeIMG.innerHTML = temple.image;
-        console.log( templeIMG );
-        templeArticle.append( h3Name, h4Location, h4Dedicated, templeIMG );
-        console.log( templeArticle );
-        templesDiv.append( templeArticle );
-    } );
-}
 
 
-
-
-/* Step 6: Finally, call the output function and pass it the list of temples.
-Execute your getTemples function to make sure it works correctly.*/
-
-
-/* Step 7: Declare a function named reset that clears all of the <article>
-elements from the HTML element with an ID of temples*/
-function clearTemples ()
-{
-    document.querySelector( "#temples" ).innerHTML = "";
-}
 
 
 // Step 8: Declare a function named sortBy that does the following:
@@ -227,7 +202,7 @@ the list of temples*/
 // set current year in footer
 
 
-const displayYear = document.getElementById("year").innerHTML = currentYear
+const displayYear = document.getElementById( "year" ).innerHTML = currentYear
 
 
 
