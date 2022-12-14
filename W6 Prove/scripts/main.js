@@ -1,48 +1,27 @@
-/* TODO: #48 1. Get the Mount Timpanogos Temple Picture from 
+/* 1. Get the Mount Timpanogos Temple Picture from 
 'https://byui-cse.github.io/cse121b-course/week05/temples.json'.*/
-let timpanogosTemple = [];
-async function getTemples ()
+
+async function getTemple ()
 {
 
     let response = await fetch( "https://byui-cse.github.io/cse121b-course/week05/temples.json" );
     console.log( response );
-    templeList = await response.json();
+    let templeList = await response.json();
     console.log( templeList );
-    let timpanogosTemple = iterateList( templeList );
-    return timpanogosTemple;
+    const timpanogosTemple = templeList.find(
+        (element)=>{return element.templeName == "Mount Timpanogos Utah Temple"}
+        );
+    return timpanogosTemple.imageUrl;
 }
 
-timpanogosTemple = getTemples();
-console.log( timpanogosTemple );
 
-async function iterateList ( templeList )
-{
-    // TODO #61 build loop to pull out temple data and find Timpanogos
 
-    console.log( timpanogosTemple );
-    templeList.forEach( temple =>
-    {
-        let templeName = temple.templeName;
-        console.log( templeName );
-        let templeLocation = temple.location;
-        console.log( templeLocation );
-        let templeDedication = temple.dedication;
-        console.log( templeDedication );
-        let templeIMG = temple.imageUrl;
-        console.log( templeIMG );
 
-        if ( templeName === "Mount Timpanogos Utah Temple" )
-        {
-            timpanogosTemple.push( templeName, templeLocation, templeDedication, templeIMG );
-            console.log( timpanogosTemple );
-            return timpanogosTemple;
-        }
-    } );
-}
 
-// TODO: #49 2. Store it in a variable
-//let timpanogosIndex = (templeList.indexOf("Timpanogos"))
-//console.log(timpanogosIndex)
+// 2. Store it in a variable
+
+const templeImage = getTemple();
+console.log( templeImage );
 
 
 // TODO: #50 3. Attach temple picture to temples div
@@ -61,7 +40,7 @@ const currentYear = currentDate.getFullYear();
 const currentMonth = currentDate.getMonth();
 const currentDay = currentDate.getDate();
 
-/* TODO: #53 8. Calculate how many days, months, and years 
+/* TODO: #53 8. Calculate how many days, months, and years
 we have been married */
 
 // TODO: #54 9. Create HTML element to display length of marriage

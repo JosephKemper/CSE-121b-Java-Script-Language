@@ -1,11 +1,11 @@
-async function testFunction(){
-let testResponse = await fetch( "https://byui-cse.github.io/cse121b-course/week05/temples.json" );
-console.log(testResponse)
 
-let testTemple = testResponse[8]
-console.log(testTemple)
-
-let testName = testTemple.templeName
-console.log(testName)
-}
-testFunction()
+    // Input array contain some elements.
+    var array = [-10, -0.20, 0.30, -40, -50];
+ 
+    // Method (return element > 0).
+    var found = array.find(function (element) {
+        return element > 0;
+    });
+ 
+    // Printing desired values.
+    console.log(found);
