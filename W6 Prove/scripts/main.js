@@ -29,6 +29,8 @@ const templesDiv = document.getElementById( "temples" );
 console.log( templesDiv );
 
 // TODO: #51 4. Create variable to store wedding date
+const weddingDate = "13 Oct 2022"
+const weddingDiv = document.getElementById("weddingDate")
 
 // TODO: #52 5. Create HTML element to display wedding date
 
